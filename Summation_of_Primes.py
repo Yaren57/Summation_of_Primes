@@ -1,13 +1,12 @@
-sayi = 2000000
-deger = 1
-for i in range(sayi):
-    deger = deger * (i + 1)
-
-print("Sonuç: ", deger)
-
-sayi = str(deger)
+son_sayi = 2000000
 toplam = 0
-for rakam in sayi:
-    toplam += int(rakam)
-
-print("Sayının rakamları toplamı:", toplam)
+for sayi in range(2, son_sayi + 1):
+    i = 2
+    for i in range(2, sayi):
+        if (int(sayi % i) == 0):
+            i = sayi
+            break
+            
+    if i is not sayi:
+        toplam = toplam + sayi
+print(toplam)
