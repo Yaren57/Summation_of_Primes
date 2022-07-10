@@ -1,12 +1,20 @@
-son_sayi = 2000000
-toplam = 0
-for sayi in range(2, son_sayi + 1):
-    i = 2
-    for i in range(2, sayi):
-        if (int(sayi % i) == 0):
-            i = sayi
-            break
-            
-    if i is not sayi:
-        toplam = toplam + sayi
-print(toplam)
+def asal_bul(x):
+    asal_sayilar = [2,3]
+    for i in range(5,x,2):
+        for b in range(3,int(i**0.5)+2,2):
+            if i % b == 0:
+                break
+            elif b+2>int(i**0.5):
+                asal_sayilar.append(i)
+                break
+    return asal_sayilar
+
+def asal_toplam(n):
+    asal_liste = asal_bul(n)
+    asal_toplam = 0
+    for i in range(0,len(asal_liste),1):
+        asal_toplam += asal_liste[i]
+    return asal_toplam
+
+if __name__=="__main__":
+    print(asal_toplam(2000000))
